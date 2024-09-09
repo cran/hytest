@@ -4,14 +4,14 @@
 \alias{gamma_errorI}
 \title{Empirical Error Type I Associated with a Gamma Distribution}
 \usage{
-gamma_errorI(c = 1, n = 150, theta0 = 0.5, beta = 1, R = 15000)
+gamma_errorI(c = 1, n = 150, theta0 = 1, beta = 1, R = 15000)
 }
 \arguments{
 \item{c}{numeric, represents a positive value that defines a critical region. Default value is 1.}
 
 \item{n}{numeric, represents the size of the sample. Default value is 100.}
 
-\item{theta0}{numeric, represents the shape parameter under the null hypothesis of a sample from a Gamma distribution. Default value is 0.5.}
+\item{theta0}{numeric, represents the shape parameter under the null hypothesis of a sample from a Gamma distribution. Default value is 1.}
 
 \item{beta}{numeric, represents the scale parameter of a Gamma distribution. It is assumed known and its default value is 1.}
 
@@ -26,8 +26,8 @@ associated with a likelihood ratio statistic.
 }
 \examples{
 # Error type I when we use a random sample of size 120 from a Gamma distribution,
-# a critical value c = 0.5 and R = 5000 to test H_0: theta = 1.5 vs H_1: theta != 1.5
-gamma_errorI(0.5,n=120,theta0=1.5,R=5000)
+# a critical value c = 0.5 and R = 200 to test H_0: theta = 1.5 vs H_1: theta != 1.5
+gamma_errorI(0.5,n=120,theta0=1.5,R=200)
 }
 \references{
 Casella, G. and Berger, R. (2003). Statistical Inference, Second Edition. Duxbury Press.

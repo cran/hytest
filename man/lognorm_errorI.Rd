@@ -25,9 +25,9 @@ associated with a likelihood ratio statistic.
 \code{lognorm_errorI} is used to obtain an empirical error type I when we use a random sample from a Log Normal distribution.
 }
 \examples{
-# Error type I when we use a random sample of size 70 from an Log Normal distribution,
-# a critical value c = 0.65 and R = 20000 to test H_0: theta = 0 vs H_1: theta != 0
-lognorm_errorI(c=0.65,n=70,theta0=0,sdlog=1,R=20000)
+# Error type I when we use a random sample of size 50 from an Log Normal distribution,
+# a critical value c = 0.5 and R = 500 to test H_0: theta = 0 vs H_1: theta != 0
+lognorm_errorI(c=0.5,n=50,theta0=0,sdlog=1,R=500)
 }
 \references{
 Casella, G. and Berger, R. (2003). Statistical Inference, Second Edition. Duxbury Press.

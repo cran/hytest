@@ -3,7 +3,7 @@
 #'\code{gamma_errorI} is used to obtain an empirical error type I when we use a random sample from a Gamma distribution.
 #' @param c numeric, represents a positive value that defines a critical region. Default value is 1.
 #' @param n numeric, represents the size of the sample. Default value is 100.
-#' @param theta0 numeric, represents the shape parameter under the null hypothesis of a sample from a Gamma distribution. Default value is 0.5.
+#' @param theta0 numeric, represents the shape parameter under the null hypothesis of a sample from a Gamma distribution. Default value is 1.
 #' @param beta numeric, represents the scale parameter of a Gamma distribution. It is assumed known and its default value is 1.
 #' @param R numeric, represents the number of replicates. Default value is 15000.
 #' @return A list with number of replicates, sample size, and critical value that were used in the calculation of error type I
@@ -13,12 +13,12 @@
 #' @author Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
 #' @examples
 #' # Error type I when we use a random sample of size 120 from a Gamma distribution,
-#' # a critical value c = 0.5 and R = 5000 to test H_0: theta = 1.5 vs H_1: theta != 1.5
-#' gamma_errorI(0.5,n=120,theta0=1.5,R=5000)
+#' # a critical value c = 0.5 and R = 200 to test H_0: theta = 1.5 vs H_1: theta != 1.5
+#' gamma_errorI(0.5,n=120,theta0=1.5,R=200)
 #' @importFrom stats rgamma dgamma glm Gamma coefficients
 #' @export gamma_errorI
 
-gamma_errorI <- function(c=1,n=150,theta0=0.5,beta=1,R=15000){
+gamma_errorI <- function(c=1,n=150,theta0=1,beta=1,R=15000){
   counter <- 0
   for(j in 1:R){
     muestra <- rgamma(n,shape=theta0,scale=beta)
